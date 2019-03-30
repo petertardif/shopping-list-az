@@ -18,14 +18,11 @@ $(function(){
 
     $('.shopping-list').on('click', '.shopping-item-toggle', function(event){
         event.preventDefault();
-        console.log(event.target);
-        $(this).closest('li',function(){
-            $('.shopping-item').toggleClass('shopping-item__checked');
-        })
+        $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
     })
 
     $('.shopping-list').on('click', '.shopping-item-delete', function(event){
         event.preventDefault();
-        
+        $(this).closest('li').remove();
     })
 })
